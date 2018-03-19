@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:workshop"
+             x:Class="workshop.MainPage"
+             BackgroundColor="{StaticResource BackgroundColor}">
+
+    <ScrollView>
+        <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="AUTO"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Navigation --> 
+        <Grid Grid.Row="0" Margin="20,30,20,30">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="Arrow_left_transparent" Grid.Column="0" HeightRequest="18" WidthRequest="18" HorizontalOptions="Start"/>
+            <Label Text="HOME" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Style="{StaticResource LabelNormalStyle}"/>
+            <Label Text="CHECK IN" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center" Style="{StaticResource LabelNormalStyle}" TextColor="#aaa"/>
+            <Label Text="PROFILE" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="Center" Style="{StaticResource LabelNormalStyle}" TextColor="#aaa"/>
+            <Image Source="Bell" Grid.Column="4" HeightRequest="18" WidthRequest="18" HorizontalOptions="End"/>
+        </Grid>
+
+        <!-- Banner -->
+        <Image Source="map" Aspect="AspectFill" Grid.Row="1"/>
+
+        <!-- block -->
+        <Grid Grid.Row="2" ColumnSpacing="-1" HeightRequest="70">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout BackgroundColor="#aaa" Padding="1,1,1,1" Grid.Column="0">
+                    <StackLayout Orientation="Horizontal" BackgroundColor="White" HeightRequest="78">
+                        <Label Text="TENDING NOW" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Style="{StaticResource LabelNormalStyle}"/>
+                    </StackLayout>
+                </StackLayout>
+                <BoxView BackgroundColor="#8f90fe" VerticalOptions="End" HeightRequest="3"/>
+                <StackLayout BackgroundColor="#aaa" Padding="1,1,1,1" Grid.Column="1">
+                    <StackLayout Orientation="Horizontal" BackgroundColor="White" HeightRequest="78">
+                        <Label Text="STAFF" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Style="{StaticResource LabelNormalStyle}"/>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout BackgroundColor="#aaa" Padding="1,1,1,1" Grid.Column="2">
+                    <StackLayout Orientation="Horizontal" BackgroundColor="White" HeightRequest="78">
+                        <Label Text="PUB INFO" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Style="{StaticResource LabelNormalStyle}"/>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        
+        <!-- Content -->
+        <StackLayout BackgroundColor="#eee" Padding="12,8,12,8" Grid.Row="3">
+            <Frame OutlineColor="#fff"
+                   BackgroundColor="#fff"
+                   Padding="0,5,0,0"
+                   HasShadow="False">
+                    <StackLayout BackgroundColor="#fff">
+                        <Grid RowSpacing="10" Padding="4,12,4,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="AUTO" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="AUTO" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="Person" Grid.Column="0" HeightRequest="60" HorizontalOptions="Start"/>
+                            <StackLayout Grid.Column="1" Margin="0,8,0,0">
+                                <Label TextColor="#000" Text="Jimena" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label TextColor="#8f90fe" Text="TENDING NOW" FontSize="12" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                    <Label TextColor="#aaa" Text="• 5 minutes ago" FontSize="12" VerticalOptions="Center" HorizontalOptions="Start"/>
+                                </StackLayout>
+                            </StackLayout>
+                            <StackLayout Grid.Column="2" Margin="12,8,8,0">
+                                <Label TextColor="#000" Text="660" FontSize="15" VerticalOptions="Center" HorizontalOptions="End"/>
+                                <Label TextColor="#aaa" Text="FOLLOWERS" FontSize="10" VerticalOptions="Center" HorizontalOptions="End"/>
+                            </StackLayout>
+                        </Grid>
+                        <Label Grid.Column="0" TextColor="#000" Text="My outfit for tonight. Come see me!" VerticalOptions="Center" Margin="12,10,12,10"/>
+                        <Image Source="MomAndChild" Aspect="AspectFill" Grid.Row="1"/>
+                    </StackLayout>
+            </Frame>
+        </StackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>
